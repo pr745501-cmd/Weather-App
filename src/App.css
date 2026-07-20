@@ -1,0 +1,144 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background with clouds */
+.weather-bg {
+  background: linear-gradient(to top, #87ceeb, #ffffff);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Soft clouds */
+.cloud {
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.8;
+  filter: blur(2px);
+  animation: cloudMove linear infinite;
+}
+
+.cloud1 {
+  width: 200px;
+  height: 60px;
+  top: 50px;
+  left: -300px;
+  animation-duration: 60s;
+}
+
+.cloud2 {
+  width: 150px;
+  height: 50px;
+  top: 120px;
+  left: -200px;
+  animation-duration: 90s;
+}
+
+.cloud3 {
+  width: 180px;
+  height: 55px;
+  top: 200px;
+  left: -400px;
+  animation-duration: 70s;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* Simple card design */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: center;
+  color: #333;
+}
+
+/* Form elements */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background: white;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #888;
+  transition: 0.3s ease;
+  pointer-events: none;
+  background: white;
+  padding: 0 4px;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 8px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Submit button */
+input[type="submit"] {
+  background-color: #4da8da;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #3a91c7;
+}
+
+/* Headings */
+.card-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+h2, h3 {
+  margin-top: 16px;
+  font-weight: normal;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .card {
+    width: 90%;
+  }
+}
